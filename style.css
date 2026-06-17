@@ -1,9 +1,8 @@
-/* --- CSS RESET & VARIABLES --- */
 :root {
     --bg-color: #fcfcfc;
     --text-main: #2b2b2b;
     --text-muted: #595959;
-    --accent-color: #bc4749; /* Warna merah bata khas data journalism */
+    --accent-color: #bc4749; 
     --accent-light: #f2e8e8;
     
     --font-sans: 'Inter', sans-serif;
@@ -25,7 +24,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- TYPOGRAPHY --- */
+
 h1, h2, h3, .tagline, .scroll-indicator {
     font-family: var(--font-sans);
 }
@@ -49,7 +48,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
-/* --- HERO SECTION --- */
+
 .hero-section {
     height: 100vh;
     display: flex;
@@ -58,7 +57,7 @@ p {
     text-align: center;
     padding: 0 20px;
     position: relative;
-    background-color: #111; /* Dark hero for contrast */
+    background-color: #111; 
     color: #fff;
 }
 
@@ -105,12 +104,12 @@ p {
     60% {transform: translateY(-5px);}
 }
 
-/* --- STORY CONTAINER --- */
+
 .story-container {
     padding: 60px 0;
 }
 
-/* Lebar dibatasi agar teks nyaman dibaca (Best Practice Jurnalistik) */
+
 .text-block {
     max-width: 680px; 
     margin: 0 auto;
@@ -135,7 +134,7 @@ p {
     margin: 60px auto;
 }
 
-/* --- SCR CHAPTERS --- */
+
 .scr-chapter {
     margin-bottom: 100px;
 }
@@ -150,18 +149,17 @@ p {
     margin-top: 30px;
 }
 
-/* --- VISUALIZATION CONTAINER --- */
-/* Lebar viz sengaja dibuat lebih luas dari teks agar imersif */
+
 .viz-container {
     max-width: 1100px; 
     margin: 50px auto 0 auto;
     padding: 0 20px;
 }
 
-/* Styling placeholder sebelum embed Tableau dimasukkan */
+
 .tableau-placeholder {
     width: 100%;
-    height: 600px; /* Sesuaikan dengan height dashboard Tableau */
+    height: 600px;
     background-color: #f0f0f0;
     border: 1px dashed #ccc;
     display: flex;
@@ -172,7 +170,7 @@ p {
     font-weight: 700;
 }
 
-/* --- FOOTER --- */
+
 .site-footer {
     background-color: #111;
     color: #fff;
@@ -199,9 +197,158 @@ p {
     border-bottom: 1px solid #fff;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     .subtitle { font-size: 1.1rem; }
     .text-block { font-size: 16px; }
+}
+
+.kpi-container {
+    display: flex;
+    justify-content: center; /* Ubah ini agar terpusat sempurna */
+    gap: 30px;
+    max-width: 700px; /* Dipersempit agar 2 card tidak terlalu panjang */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.kpi-card {
+    flex: 1;
+    background: #ffffff;
+    border-top: 4px solid var(--accent-color); /* Garis atas merah bata agar selaras dengan tema */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Bayangan lembut yang elegan */
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px); /* Efek interaktif saat dihover */
+}
+
+.kpi-title {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.kpi-value {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 3rem; /* Angka besar mencolok (Data Typography) */
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.kpi-desc {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* Responsiveness untuk layar HP */
+@media (max-width: 768px) {
+    .kpi-container {
+        flex-direction: column;
+    }
+    .kpi-value {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- PORTRAIT / PIGORA PRESIDEN LAYOUT --- */
+.title-with-portraits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Jarak antara foto dan judul */
+    margin: 40px 0;
+}
+
+.main-title-box {
+    flex: 1;
+    max-width: 650px;
+}
+
+.main-title-box h1 {
+    margin: 0 0 15px 0;
+    font-size: 3rem; /* Sedikit dikecilkan agar proporsional dengan foto */
+}
+
+.portrait-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.portrait-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 0.5px solid white; /* Bingkai pigora warna merah bata */
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    margin-bottom: 15px;
+}
+
+.author-name {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.author-name small {
+    font-weight: 400;
+    color: #a3a3a3;
+    font-size: 0.8rem;
+}
+
+/* Responsiveness: Ubah layout menjadi vertikal berjejer jika dibuka di HP */
+@media (max-width: 768px) {
+    .title-with-portraits {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Mengubah susunan HP: Foto 1 - Foto 2 berdampingan, lalu Judul di bawah */
+    .title-with-portraits {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .portrait-box {
+        width: 120px;
+        margin: 0 auto;
+    }
+    
+    .portrait-box img {
+        height: 160px;
+    }
+
+    .main-title-box {
+        grid-column: span 2;
+        margin-top: 20px;
+    }
+    
+    .main-title-box h1 {
+        font-size: 2.2rem;
+    }
 }
